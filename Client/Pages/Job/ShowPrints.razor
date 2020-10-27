@@ -1,0 +1,14 @@
+@page "/ShowPrints"
+@attribute [Authorize]
+@inject IdentityAuthenticationStateProvider authStateProvider
+
+<AuthorizeView>
+    <Authorized>
+        <div class="card mt-4">
+            <h4 class="card-header">You're logged in with Blazor WebAssembly & Idenity!!</h4>
+            <div class="card-body">
+                <h6>@context.User.Identity.Name, this is where you'd list your historical prints.</h6>
+            </div>
+        </div>
+    </Authorized>
+</AuthorizeView>

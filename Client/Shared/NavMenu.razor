@@ -1,0 +1,32 @@
+﻿@inject NavigationManager navigationManager
+
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <AuthorizeView>
+        <Authorized>
+            <div class="navbar-nav mr-auto">
+                <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>
+                <NavLink href="About"  class="nav-item nav-link">Makerspace Info</NavLink>
+                <NavLink href="CreatePrint"  class="nav-item nav-link">Create Print</NavLink>
+                <NavLink href="ShowPrints"  class="nav-item nav-link">Show My Prints</NavLink>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <NavLink href="EditUser" class="nav-item nav-link">My Profile</NavLink>
+                <NavLink href="Logout" class="nav-item nav-link">Logout</NavLink>
+            </div>
+        </Authorized>
+        <NotAuthorized>
+            <div class="navbar-nav mr-auto">
+                <NavLink href="" Match="NavLinkMatch.All" class="nav-item nav-link">Home</NavLink>
+                <NavLink href="About"  class="nav-item nav-link">Makerspace Info</NavLink>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <NavLink href="Login" class="nav-item nav-link">Login</NavLink>
+                <NavLink href="Register" class="nav-item nav-link">Register</NavLink>
+            </div>                
+        </NotAuthorized>
+    </AuthorizeView>            
+</nav>
+
+@code {
+
+}
