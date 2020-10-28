@@ -129,6 +129,8 @@ textarea.form-control.invalid {
         }
 
 /* Bootstrap Overrides */
-.nav-item {
-    width: 8%;
+.oi {
+    padding: 0px 8px;
+    font-size: 20px;
+    top: 3px
 }
