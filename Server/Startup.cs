@@ -23,8 +23,12 @@ namespace MakerspaceManager.Server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-              options.UseSqlite("Filename=data.db"));
+            // services.AddDbContext<ApplicationDbContext>(options =>
+            //   options.UseSqlite("Filename=data.db"));
+
+            services.AddDbContext<ApplicationDbContext>(options => 
+                //options.UseInMemoryDatabase("ApplicationDbContext"));
+                options.UseMySQL("server=localhost;database=MakerspaceDB;user=mkadmin;password=ThisMakerPassword.2020"));            
 
             services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()

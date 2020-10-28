@@ -1,0 +1,39 @@
+@* @page "/Test"
+
+<h1 class="h2 font-weight-normal login-title">
+    Makerspace Manager Registration
+</h1>
+
+<EditForm class="form" OnValidSubmit="OnSubmit" Model="testModel">
+    <DataAnnotationsValidator />
+    <h4 class="font-weight-normal text-center">Create Account</h4>
+
+    <label for="inputUsername" class="sr-only">User Name</label>
+    <InputText id="inputUsername" class="form-control" placeholder="Username" autofocus @bind-Value="@testModel.UserName" />
+    <ValidationMessage For="@(() => testModel.UserName)" />
+
+    <label for="inputPassword" class="sr-only">Password</label>
+    <InputText type="password" id="inputPassword" class="form-control" placeholder="Password" @bind-Value="@testModel.Password" />
+    <ValidationMessage For="@(() => testModel.Password)" />
+
+    <label for="inputPasswordConfirm" class="sr-only">Password Confirmation</label>
+    <InputText type="password" id="inputPasswordConfirm" class="form-control" placeholder="Password Confirmation" @bind-Value="@testModel.PasswordConfirm" />
+    <ValidationMessage For="@(() => testModel.PasswordConfirm)" />
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create account</button>
+
+    <label class="text-danger">@error</label>
+    <NavLink href="login">
+        <h6 class="font-weight-normal text-center">Already have an account? Click here to login</h6>
+    </NavLink>
+</EditForm>
+
+@code {
+
+    private Object testModel;
+
+public void OnSubmit()
+{
+    // comment
+}
+} *@
