@@ -12,6 +12,7 @@ namespace MakerspaceManager.Server.Models
     {
         public enum PermitType
         {
+            None,
             Blue,
             Red,
             Green,
@@ -19,11 +20,11 @@ namespace MakerspaceManager.Server.Models
         }
 
         //[ForeignKey] -- tracks Jobs associated with User
-        public List<PrintTracker> UserPrintJobs { get; set; } = new List<PrintTracker>();
+        public ICollection<PrintTracker> UserPrintJobs { get; set; } = new List<PrintTracker>();
 
         //Temporary Auth Token
         //public string Token { get; set; }
-
+        public ICollection<IdentityRole<Guid>> Roles { get; set; } = new List<IdentityRole<Guid>>();
         //User Attributes
         public string FirstName { get; set; }
         public string LastName { get; set; }

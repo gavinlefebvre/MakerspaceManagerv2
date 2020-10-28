@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MakerspaceManager.Server.Models
 {
-    public class ApplicationUserRole : IdentityUserRole<string>
+    public class ApplicationUserRole : IdentityUserRole<Guid>
     {
         public virtual ApplicationUser User { get; set; }
         public virtual IdentityRole Role { get; set; }
