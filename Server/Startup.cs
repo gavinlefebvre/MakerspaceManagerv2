@@ -27,8 +27,8 @@ namespace MakerspaceManager.Server
             //   options.UseSqlite("Filename=data.db"));
 
             services.AddDbContext<ApplicationDbContext>(options => 
-                //options.UseInMemoryDatabase("ApplicationDbContext"));
-                options.UseMySQL("server=localhost;database=MakerspaceDB;user=mkadmin;password=ThisMakerPassword.2020"));            
+                options.UseInMemoryDatabase("ApplicationDbContext"));
+                //options.UseMySQL("server=localhost;database=MakerspaceDB;user=mkadmin;password=ThisMakerPassword.2020"));            
 
             services.AddIdentity<ApplicationUser, IdentityRole<Guid>>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
